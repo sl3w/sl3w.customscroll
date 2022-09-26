@@ -108,6 +108,11 @@ $aTabs = [
 
             ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_CACHE_NOTE')],
         ]
+    ],
+    [
+        'DIV' => 'support',
+        'TAB' => Loc::getMessage('SL3W_CUSTOMSCROLL_SUPPORT_TAB_NAME'),
+        'TITLE' => Loc::getMessage('SL3W_CUSTOMSCROLL_SUPPORT_TAB_TITLE'),
     ]
 ];
 
@@ -224,6 +229,10 @@ $optionsByBlock = [
     'cache_note' => ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_CACHE_NOTE')],
 ];
 
+$optionsByBlock2 = [
+    'support_note' => ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_SUPPORT_NOTE')],
+];
+
 $tabControl->Begin();
 ?>
 
@@ -327,6 +336,13 @@ $tabControl->Begin();
         }
 
         __AdmSettingsDrawRow($module_id, $optionsByBlock['cache_note']);
+
+        $tabControl->BeginNextTab();
+        ?>
+        <iframe src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&default-sum=50&button-text=12&payment-type-choice=on&successURL=&quickpay=shop&account=410014134044507&targets=%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%20%D0%BF%D0%BE%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B5&"
+                width="423" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        <?
+        __AdmSettingsDrawRow($module_id, $optionsByBlock2['support_note']);
 
         $tabControl->Buttons();
         ?>

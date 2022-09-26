@@ -20,7 +20,7 @@ $MESS['SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_THICK'] = 'Толщина границы ползунк
 $MESS['SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_COLOR'] = 'Цвет границы ползунка:';
 
 $MESS['SL3W_CUSTOMSCROLL_BLOCK_FIREFOX'] = 'Браузер Firefox:';
-$MESS['SL3W_CUSTOMSCROLL_BLOCK_FIREFOX_NOTE'] = 'Браузер Firefox позволяет управлять только цветами скроллбара.';
+$MESS['SL3W_CUSTOMSCROLL_BLOCK_FIREFOX_NOTE'] = 'Браузер Firefox позволяет изменять только цвета скроллбара.';
 $MESS['SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON_FIREFOX'] = 'Устанавливать кастомный скроллбар в браузере Firefox:';
 $MESS['SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_TRACK'] = 'Цвет скроллбара:';
 $MESS['SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_THUMB'] = 'Цвет ползунка:';
@@ -29,3 +29,7 @@ $MESS['SL3W_CUSTOMSCROLL_CACHE_NOTE'] = 'После применения настроек может потребо
 
 $MESS['SL3W_CUSTOMSCROLL_BUTTON_APPLY'] = 'Применить';
 $MESS['SL3W_CUSTOMSCROLL_BUTTON_DEFAULT'] = 'По умолчанию';
+
+$MESS['SL3W_CUSTOMSCROLL_SUPPORT_TAB_NAME'] = 'Поддержать разработку';
+$MESS['SL3W_CUSTOMSCROLL_SUPPORT_TAB_TITLE'] = 'Вы можете добровольно поддержать разработку этого и других модулей, переведя любую сумму с помощью формы ниже:';
+$MESS['SL3W_CUSTOMSCROLL_SUPPORT_NOTE'] = 'Также буду благодарен за Ваши оценки и отзывы, которые вы можете оставить на <a href="http://marketplace.1c-bitrix.ru/solutions/sl3w.customscroll/#tab-rating-link" target="_blank">странице модуля в Маркетплейсе</a>.';
