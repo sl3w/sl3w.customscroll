@@ -6,7 +6,7 @@ use Sl3w\CustomScroll\Settings as Settings;
 
 class Events
 {
-    public function AppendScriptsToPageWebkit()
+    public static function AppendScriptsToPageWebkit()
     {
         $webkitWidth = Settings::get('webkit_width');
         $webkitBgColorTrack = Settings::get('webkit_background_color_track');
@@ -44,7 +44,7 @@ class Events
         }
     }
 
-    public function AppendScriptsToPageFirefox()
+    public static function AppendScriptsToPageFirefox()
     {
         if (!defined('ADMIN_SECTION')) {
             $firefoxColorThumb = Settings::get('firefox_color_thumb');
