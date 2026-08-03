@@ -5,6 +5,13 @@ use Bitrix\Main\HttpApplication;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Config\Option;
 
+global $USER;
+global $APPLICATION;
+
+if (!$USER->IsAdmin()) {
+    die();
+}
+
 Loc::loadMessages(__FILE__);
 
 $request = HttpApplication::getInstance()->getContext()->getRequest();
@@ -24,7 +31,7 @@ $aTabs = [
                 'switch_on',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON'),
                 'N',
-                ['checkbox']
+                ['checkbox'],
             ],
 
             Loc::getMessage('SL3W_CUSTOMSCROLL_BLOCK_WEBKIT'),
@@ -33,56 +40,56 @@ $aTabs = [
                 'switch_on_webkit',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON_WEBKIT'),
                 'N',
-                ['checkbox']
+                ['checkbox'],
             ],
             [
                 'webkit_width',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_WIDTH'),
                 '15px',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'webkit_background_color_track',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_COLOR_TRACK'),
                 '#F5F5F5',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'webkit_show_shadow_track',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_SHOW_SHADOW_TRACK'),
                 'N',
-                ['checkbox']
+                ['checkbox'],
             ],
             [
                 'webkit_background_color_thumb',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_COLOR_THUMB'),
                 '#00AAEE',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'webkit_background_image_thumb',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_IMAGE_THUMB'),
                 '-webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent))',
-                ['text', 70]
+                ['text', 70],
             ],
             ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_BG_COLOR_IMAGE_NOTE')],
             [
                 'webkit_border_radius_thumb',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_RADIUS_THUMB'),
                 '2px',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'webkit_border_thick',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_THICK'),
                 '1px',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'webkit_border_color',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_COLOR'),
                 '#0000FF',
-                ['text', 10]
+                ['text', 10],
             ],
 
             Loc::getMessage('SL3W_CUSTOMSCROLL_BLOCK_FIREFOX'),
@@ -91,29 +98,29 @@ $aTabs = [
                 'switch_on_firefox',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON_FIREFOX'),
                 'N',
-                ['checkbox']
+                ['checkbox'],
             ],
             [
                 'firefox_color_track',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_TRACK'),
                 '#F5F5F5',
-                ['text', 10]
+                ['text', 10],
             ],
             [
                 'firefox_color_thumb',
                 Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_THUMB'),
                 '#00AAEE',
-                ['text', 10]
+                ['text', 10],
             ],
 
             ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_CACHE_NOTE')],
-        ]
+        ],
     ],
     [
         'DIV' => 'support',
         'TAB' => Loc::getMessage('SL3W_CUSTOMSCROLL_SUPPORT_TAB_NAME'),
         'TITLE' => Loc::getMessage('SL3W_CUSTOMSCROLL_SUPPORT_TAB_TITLE'),
-    ]
+    ],
 ];
 
 $tabControl = new CAdminTabControl(
@@ -128,8 +135,8 @@ $optionsByBlock = [
             'switch_on',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON'),
             'N',
-            ['checkbox']
-        ]
+            ['checkbox'],
+        ],
     ],
     'webkit_block' => Loc::getMessage('SL3W_CUSTOMSCROLL_BLOCK_WEBKIT'),
     'webkit_note' => ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_BLOCK_WEBKIT_NOTE')],
@@ -138,13 +145,13 @@ $optionsByBlock = [
             'switch_on_webkit',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON_WEBKIT'),
             'N',
-            ['checkbox']
+            ['checkbox'],
         ],
         [
             'webkit_width',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_WIDTH'),
             '15px',
-            ['text', 10]
+            ['text', 10],
         ],
     ],
     'webkit_colors_1' => [
@@ -152,7 +159,7 @@ $optionsByBlock = [
             'webkit_background_color_track',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_COLOR_TRACK'),
             '#F5F5F5',
-            ['text', 10]
+            ['text', 10],
         ],
     ],
     'webkit_list2' => [
@@ -160,7 +167,7 @@ $optionsByBlock = [
             'webkit_show_shadow_track',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_SHOW_SHADOW_TRACK'),
             'N',
-            ['checkbox']
+            ['checkbox'],
         ],
     ],
     'webkit_colors_2' => [
@@ -168,13 +175,13 @@ $optionsByBlock = [
             'webkit_background_color_thumb',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_COLOR_THUMB'),
             '#00AAEE',
-            ['text', 10]
+            ['text', 10],
         ],
         [
             'webkit_background_image_thumb',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BACKGROUND_IMAGE_THUMB'),
             '-webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent))',
-            ['text', 70]
+            ['text', 70],
         ],
     ],
     'webkit_bg_note' => ['note' => Loc::getMessage('SL3W_CUSTOMSCROLL_BG_COLOR_IMAGE_NOTE')],
@@ -183,13 +190,13 @@ $optionsByBlock = [
             'webkit_border_radius_thumb',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_RADIUS_THUMB'),
             '2px',
-            ['text', 10]
+            ['text', 10],
         ],
         [
             'webkit_border_thick',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_THICK'),
             '1px',
-            ['text', 10]
+            ['text', 10],
         ],
     ],
     'webkit_colors_3' => [
@@ -197,7 +204,7 @@ $optionsByBlock = [
             'webkit_border_color',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_WEBKIT_BORDER_COLOR'),
             '#0000FF',
-            ['text', 10]
+            ['text', 10],
         ],
     ],
 
@@ -208,7 +215,7 @@ $optionsByBlock = [
             'switch_on_firefox',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_SWITCH_ON_FIREFOX'),
             'N',
-            ['checkbox']
+            ['checkbox'],
         ],
     ],
     'firefox_colors' => [
@@ -216,13 +223,13 @@ $optionsByBlock = [
             'firefox_color_track',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_TRACK'),
             '#F5F5F5',
-            ['text', 10]
+            ['text', 10],
         ],
         [
             'firefox_color_thumb',
             Loc::getMessage('SL3W_CUSTOMSCROLL_OPTION_FIREFOX_COLOR_THUMB'),
             '#00AAEE',
-            ['text', 10]
+            ['text', 10],
         ],
     ],
 
@@ -257,7 +264,7 @@ $tabControl->Begin();
                     <input type="<?= $webkit_colors_1_option[3][0] ?: 'text' ?>"
                            name="<?= $webkit_colors_1_option[0] ?>"
                            size="<?= $webkit_colors_1_option[3][1] ?: 10 ?>"
-                           value="<?= $value ?>"
+                           value="<?= htmlspecialcharsbx($value) ?>"
                            style="background-color: <?= $value ?>"
                     />
                 </td>
@@ -276,7 +283,7 @@ $tabControl->Begin();
                     <input type="<?= $webkit_colors_2_option[3][0] ?: 'text' ?>"
                            name="<?= $webkit_colors_2_option[0] ?>"
                            size="<?= $webkit_colors_2_option[3][1] ?: 10 ?>"
-                           value="<?= $value ?>"
+                           value="<?= htmlspecialcharsbx($value) ?>"
                         <?php
                         if ($webkit_colors_2_option[0] == 'webkit_background_color_thumb') {
                             ?>
@@ -306,7 +313,7 @@ $tabControl->Begin();
                     <input type="<?= $webkit_colors_3_option[3][0] ?: 'text' ?>"
                            name="<?= $webkit_colors_3_option[0] ?>"
                            size="<?= $webkit_colors_3_option[3][1] ?: 10 ?>"
-                           value="<?= $value ?>"
+                           value="<?= htmlspecialcharsbx($value) ?>"
                            style="background-color: <?= $value ?>"
                     />
                 </td>
@@ -327,7 +334,7 @@ $tabControl->Begin();
                     <input type="<?= $firefox_colors_option[3][0] ?: 'text' ?>"
                            name="<?= $firefox_colors_option[0] ?>"
                            size="<?= $firefox_colors_option[3][1] ?: 10 ?>"
-                           value="<?= $value ?>"
+                           value="<?= htmlspecialcharsbx($value) ?>"
                            style="background-color: <?= $value ?>"
                     />
                 </td>
